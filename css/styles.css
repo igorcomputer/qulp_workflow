@@ -1,0 +1,11 @@
+/*
+APP STYLES 
+*/
+body {margin: 0; padding: 0;}
+.main_wrap {padding:20px;}
+.main_container {background: #ffd;margin: 50px auto; padding: 0; font: 10pt Arial, Helvetica, sans-serif;width:1000px;min-height:500px;border:1px dashed silver;}
+.main_container h1 {font-size:56px;color:blue;}  
+.main_container li {font-size:15px;padding:0;margin:0;margin-bottom:5px;}
+p a {font-size:10px;} 
+.test span {color:blue;}
+.round {border-radius:1px solid blue;} 
