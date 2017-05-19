@@ -1,0 +1,21 @@
+{
+  "name": "bower-test",
+  "description": "none",
+  "main": "index.js",
+  "authors": [
+    "igorcomputer <igorcomputer@mail.ru>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.0.0"
+  }
+}
