@@ -8,11 +8,20 @@ var notify       = require("gulp-notify");
 var autoprefixer = require('gulp-autoprefixer');
 var connect      = require('gulp-connect'); 
 
+//GULP LESS 
+var less         = require('gulp-less');
+
 gulp.task('connect', function() {
 	connect.server({
 		root: 'app',
 		livereload: true
 	});
+}); 
+
+gulp.task('less', function(){
+	gulp.src('./less/**/*.less')
+		.pipe(less())
+		.pipe(gulp.dest('./css/'))
 });
 
 gulp.task('css', function(){
