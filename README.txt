@@ -1,4 +1,9 @@
 
+Старт проекта NPM:
+==================================================
+npm init          // Инициализация проекта (создание package.json)
+npm install       // Установка пакетов, прописанных в файле package.json (dependencies, devDependencies) 
+
 Установка модулей NPM:
 ==================================================
 Лакально  - в папку node_modules в текущий каталог 
@@ -6,8 +11,10 @@
 
 npm i <имя модуля> -g             // Глобально
 npm i <имя модуля>                // Лакально без записи в package.json 
-npm i <имя модуля> --save         // Локально с записью в package.json (devDependencies) 
-npm i <имя модуля> --save-dev	  // Локально с записью в package.json (dependencies) 
+npm i <имя модуля> --save         // Локально с записью в package.json (dependencies) 
+npm i <имя модуля> --S            // --- сокращенная запись   
+npm i <имя модуля> --save-dev	  // Локально с записью в package.json (devDependencies)
+npm i <имя модуля> --D            // --- сокращенная запись   
 
 Команды Gulp (http://gulpjs.com):
 ==================================================
@@ -26,8 +33,10 @@ npm install bower -g    // Установка (Глобально)
 
 bower init              // Интерактивное создание конфига bower.json  
 
-bower -v                // Версия:
-bower search jquery     // Поиск: 
+bower -v                // Версия 
+bower search jquery     // Поиск
+bower s jquery			// Поиск (сокращенно) 
+
 bower info jquery       // Детальная информация о библиотеке
 
 Установка библиотек: (по умолчанию в папку bower_components текущего каталога) 

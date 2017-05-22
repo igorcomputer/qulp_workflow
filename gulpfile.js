@@ -8,45 +8,49 @@ var notify       = require("gulp-notify");
 var autoprefixer = require('gulp-autoprefixer');
 var connect      = require('gulp-connect'); 
 
-//GULP LESS 
-var less         = require('gulp-less');
+var less           = require('gulp-less');
+var LessAutoprefix = require('less-plugin-autoprefix');
+var autoprefix     = new LessAutoprefix({ browsers: ['last 2 versions'] });
 
+// SERVER 
 gulp.task('connect', function() {
 	connect.server({
-		root: 'app',
+		root: 'public_html',
 		livereload: true
 	});
 }); 
 
-gulp.task('less', function(){
-	gulp.src('./less/**/*.less')
-		.pipe(less())
-		.pipe(gulp.dest('./css/'))
+// LESS to CSS 
+gulp.task('less', function () { 
+  return gulp.src('./src/less/main_styles.less') 
+    .pipe(less({
+    	plugins: [autoprefix] 
+    })) 
+    .pipe(gulp.dest('./public_html/css')) 
+    .pipe(connect.reload()); 
 });
 
-gulp.task('css', function(){
-	return gulp.src('./css/*.css')           // src files 
-		.pipe(autoprefixer({ browsers: ['last 11 versions'], cascade: false })) 
-		.pipe(concatCSS("main_styles.css"))  // name after concat 
-		.pipe(gulp.dest('./app/css/'))       // save to destination dir 
-		.pipe(cleanCSS())                    // minify 
-		.pipe(rename('main_styles.min.css')) // rename after minify
-		.pipe(gulp.dest('./app/css/'))       // save to destination dir
-		.pipe(connect.reload());
+//CSS minify (start 'less' before css_minify)  
+gulp.task('css_minify', ['less'], function(){  
+	return gulp.src('./public_html/css/main_styles.css') // src files  
+		.pipe(cleanCSS())                                // minify 
+		.pipe(rename('main_styles.min.css'))             // rename after minify
+		.pipe(gulp.dest('./public_html/css/'))           // save to destination dir 
+		.pipe(connect.reload()); 
 		//.pipe(notify('--- CSS Done OK! --'));
 }); 
 
 gulp.task('html', function(){
-	return gulp.src('./app/*.html') 
+	return gulp.src('./public_html/*.html') 
 		.pipe(connect.reload());
-}); 
-
-gulp.task('watch', function(){
-	gulp.watch('./css/*.css', ['css']) 
-	gulp.watch('./app/*.html', ['html']) 
 });
 
-gulp.task('default', ['connect', 'css', 'html', 'watch']);
+gulp.task('watch', function(){
+	gulp.watch('./src/less/*.less', ['css_minify']) // less with minify css
+	gulp.watch('./public_html/*.html', ['html']) 
+});
+
+gulp.task('default', ['connect', 'css_minify', 'html', 'watch']); // compile less with minify css 
 
 /*
 
