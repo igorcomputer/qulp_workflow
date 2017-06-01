@@ -1,0 +1,35 @@
+include mixins
+
+block page_vars
+
+doctype html
+html
+  head
+    title=title || 'Default Title'
+    meta(name='keywords' content=keywords || '') 
+    meta(name='description' content=description || '')
+
+    // MAIN STYLES 
+    link(rel='stylesheet', type='text/css', href='css/main_styles.css')
+  body
+    .main_container
+
+      block page_content 
+        
+        h1=h1 || 'Заголовок страницы'
+        p 
+          img(src="//lorempixel.com/50/50/" align="left")
+          |Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, beatae voluptatem debitis, a, impedit id, repudiandae unde quaerat iusto ipsa commodi quia corporis ad ducimus! Repellendus, recusandae illum minus sit!
+
+      #footer
+
+        .footer_sub
+          .footer_menu
+            +make_menu(["Главная", "Новости", "Контакты"])
+
+        .footer_block
+          p copyright&nbsp;
+            a(href="#") igorcomputer
+
+      
+

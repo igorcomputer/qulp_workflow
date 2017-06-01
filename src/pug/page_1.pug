@@ -1,0 +1,37 @@
+extends includes/layout
+
+block page_vars 
+
+  - var title       = 'Страница' 
+  - var keywords    = 'Ключевые слова'
+  - var description = 'Описание страницы'
+
+  - var h1          = 'Страница тест' 
+
+block page_content
+
+  h1=h1
+  .top_menu
+    +make_menu(["Главная", "Новости", "Контакты"]) 
+  hr
+  h2 Заголовок h2
+  p  
+    img(src="//lorempixel.com/50/50/" align="left")
+    |Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, sapiente, iure molestiae consectetur rem eum natus sunt soluta? 
+    a(href="#") this is just link 
+    |Dolores quod in obcaecati quasi magnam voluptatum quibusdam itaque nostrum, magni sunt. 
+  
+  p 
+    |Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    a(href="#") this is just link 
+    |Quisquam a aspernatur earum, reprehenderit rem ipsa praesentium atque accusamus unde et voluptas cum tenetur, tempore dolorem quas. Unde maxime nulla, soluta.
+
+  hr
+  h3 Заголовок h3
+  p 
+    img(src="//lorempixel.com/50/50/" align="left") 
+    |Lorem ipsum dolor sit amet, 
+    a(href="#") this is just link  
+    |consectetur adipisicing elit. Minima praesentium optio adipisci sint 
+    a(href="#") this is just link 
+    |obcaecati doloremque. Ab quaerat vero modi cum eum vitae omnis! Aliquam, voluptatem, consequuntur. Asperiores aut nam, placeat.
