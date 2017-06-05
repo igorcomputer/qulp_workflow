@@ -6,22 +6,27 @@ include includes/mixins.pug
 doctype html
 html
   head
-    title My Site2
+    title Gulp Workflow 
     link(rel='stylesheet', type='text/css', href='css/main_styles.css')
   body
     .main_container
-      h1 Проверка связи все отлично!
+      h1 Настройка Workflow: 
+         br
+         |Pug(Jade) + Less = Html + CSS!
       
       -var menu_items =["Главная", "Новости", "Контакты"]
       .menu
         +make_menu(menu_items)
 
-      p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quas nostrum, illum provident. Voluptate tenetur, architecto deleniti rem hic laborum aut! Obcaecati sequi blanditiis nulla odio pariatur ad, laudantium autem.
-      .test проверка связи
+      p  
+        |Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quas nostrum, illum provident. Voluptate tenetur, architecto deleniti rem hic laborum aut! Obcaecati sequi blanditiis nulla odio pariatur ad, laudantium autem.
+      p
+        a(href="#") Click Me 
+        |Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam dolore praesentium eius? Dolor ipsum nulla error quisquam, unde debitis eveniet amet adipisci illo sit quas quaerat illum id molestiae dolores.
 
       #footer
         .footer_menu
           +make_menu(menu_items) 
-        p copyright text 
-          a тест
+        p copyright 
+          a(href="https://github.com/igorcomputer/gulp_workflow") igorcomputer
 

@@ -81,6 +81,6 @@ $ gulp
 Browser (livereload):
 http://localhost:8080
 http://localhost:8080/index.html
-http://localhost:8080/about.html
+http://localhost:8080/page_1.html
 
 */

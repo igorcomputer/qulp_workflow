@@ -232,7 +232,7 @@ th {
   height: 30px;
   text-align: center;
   line-height: 300%;
-  color: #ff0001;
+  color: #00ff01;
   text-shadow: 1px 1px 0px #000000;
   border-style: solid;
   border-width: 0 1px 0 1px;
@@ -263,11 +263,11 @@ th {
   display: block;
   padding: 10px 5px;
   text-decoration: none;
-  color: red;
+  color: darkblue;
   border-bottom: 1px solid silver;
 }
 .menu ul li a:hover {
-  color: blue;
+  color: red;
 }
 .main_container {
   width: 500px;
@@ -282,9 +282,10 @@ th {
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
-.main_container p a {
+.main_container a {
   color: red;
   text-decoration: none;
+  border-bottom: 1px solid red;
 }
 .main_container img[align="left"] {
   margin-right: 20px;
